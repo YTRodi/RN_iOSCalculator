@@ -6,11 +6,17 @@ interface Props {
   text: string;
   backgroundColor?: string;
   full?: boolean;
+  action: (textNumber: string) => void;
 }
 
-const Button = ({ text, backgroundColor = '#2D2D2D', full = false }: Props) => {
+const Button = ({
+  text,
+  backgroundColor = '#2D2D2D',
+  full = false,
+  action,
+}: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => action(text)} activeOpacity={0.7}>
       <View
         style={{
           ...styles.button,

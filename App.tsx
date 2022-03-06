@@ -8,7 +8,7 @@ import { styles } from './src/theme/appTheme';
 const App = () => {
   return (
     <SafeAreaView style={styles.background}>
-      <StatusBar backgroundColor="black" barStyle={'light-content'} />
+      <StatusBar backgroundColor="black" barStyle="light-content" />
       <CalculatorScreen />
     </SafeAreaView>
   );
