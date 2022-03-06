@@ -20,9 +20,20 @@ const CalculatorScreen = () => {
     }
 
     if (number.startsWith('0') || number.startsWith('-0')) {
+      if (textNumber === '.') {
+        setNumber(number + textNumber);
+      } else if (textNumber === '0' && number.includes('.')) {
+        setNumber(number + textNumber);
+      } else if (textNumber !== '0' && !number.includes('.')) {
+        setNumber(textNumber);
+      } else if (textNumber === '0' && !number.includes('.')) {
+        setNumber(number);
+      } else {
+        setNumber(number + textNumber);
+      }
+    } else {
+      setNumber(number + textNumber);
     }
-
-    setNumber(number + textNumber);
   };
 
   const plusLess = () => {
